@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// SimpleComponent.jsx
 
-function App() {
+import React from 'react';
+
+const layout = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className="Welcome">
+      <div className='titleH'><h1>Welcome to <i>Harmonify</i></h1></div>
+      <div className='paragraphAdjustment'>
+        <p>Harmonify is an entertaining, song guessing game. You will be played a short clip of a random song from the genre that you selected. If you guess the song correctly,
+          you get 1 point. If you guesswrong, you get 1 strike. Once you get 3 strikes, the game ends! Select your song genre, select your difficulty and begin when you are ready!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      </div>
 
-export default App;
+      <div className='Genres'>
+        <h1><b>Select a Genre:</b></h1>
+        <div className="center-rectangle">
+          <span className='blinkingText'><b>Country</b></span>
+        </div>
+        <div className="center-rectangle">
+          <span className='blinkingText'><b>Rap</b></span>
+        </div>
+        <div className="center-rectangle">
+          <span className='blinkingText'><b>R&b</b></span>
+        </div>
+        <div className="center-rectangle">
+          <span className='blinkingText'><b>Rock</b></span>
+        </div>
+        <div className="center-rectangle">
+          <span className='blinkingText'><b>Pop</b></span>
+        </div>
+      </div>
+    </div>
+
+  );
+};
+
+export default layout;
