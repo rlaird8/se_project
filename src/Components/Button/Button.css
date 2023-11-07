@@ -1,28 +1,15 @@
-
 .blinkingText {
   animation: blink 2s infinite;
   /* Same duration as rectangles */
-
-}
-
-.center-rectangle {
-  width: 100px;
-  /* Adjust the width as needed to make the rectangles narrower */
-  height: 50px;
-  /* Adjust the height as needed */
-  background-color: aqua;
+  font-size: 20px;
   color: black;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
-  /* Rectangle background color */
-  margin: 5px;
-  /* Add some spacing between options */
-  margin: 40px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /*animation: blink 2s infinite;*/
+  animation: none;
+}
+
+.blinkingText:hover {
+  animation: blink 2s infinite;
+  /* Blink animation on hover */
 }
 
 @keyframes blink {
@@ -39,11 +26,27 @@
   }
 }
 
+.center-rectangle {
+  width: 100px;
+  /* Adjust the width as needed to make the rectangles narrower */
+  height: 50px;
+  /* Adjust the height as needed */
+  background-color: aqua;
+  /* Rectangle background color */
+  margin: 5px;
+  /* Add some spacing between options */
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /*animation: blink 2s infinite;*/
+}
+
+
 
 .Genres {
   font-size: 14px;
   margin: 20px auto;
-  color: red;
+  display: flex;
 }
-
-

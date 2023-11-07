@@ -12,31 +12,18 @@ const layout = () => {
           you get 1 point. If you guesswrong, you get 1 strike. Once you get 3 strikes, the game ends! Select your song genre, select your difficulty and begin when you are ready!
         </p>
       </div>
+      <h1 style={{ color: 'red' }}><b>Select a Genre:</b></h1>
+
 
       <div className='Genres'>
-        <h1><b>Select a Genre:</b></h1>
-        <Button buttonText={"Country"}/>
-        <Button buttonText={"Rap"}/>
-        <Button buttonText={"R&b"}/>
-        <Button buttonText={"Rock"}/>
-        <Button buttonText={"Pop"}/>
-        {/* <div className="center-rectangle">
-          <span className='blinkingText'><b>Country</b></span>
-        </div>
-        <div className="center-rectangle">
-          <span className='blinkingText'><b>Rap</b></span>
-        </div>
-        <div className="center-rectangle">
-          <span className='blinkingText'><b>R&b</b></span>
-        </div>
-        <div className="center-rectangle">
-          <span className='blinkingText'><b>Rock</b></span>
-        </div>
-        <div className="center-rectangle">
-          <span className='blinkingText'><b>Pop</b></span>
-        </div> */}
+        <Button buttonText={"Country"} />
+        <Button buttonText={"Rap"} />
+        <Button buttonText={"R&b"} />
+        <Button buttonText={"Rock"} />
+        <Button buttonText={"Pop"} />
+
       </div>
-    </div>
+    </div >
 
   );
 };
