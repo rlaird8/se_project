@@ -8,17 +8,6 @@ body {
   background-color: black;
 }
 
-.Welcome {
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
-  text-align: center;
-  font-size: 18px;
-
-}
-
-.paragraphAdjustment {
-  margin-top: -20px;
-}
 
 .titleH {
   font-size: 24px;
@@ -29,6 +18,7 @@ body {
   /* Hide overflowing text */
   animation: typewriter 2s steps(40);
 }
+
 
 @keyframes typewriter {
   from {
@@ -42,10 +32,16 @@ body {
   }
 }
 
-.Genres {
-  font-size: 14px;
-  margin: 20px auto;
-  color: red;
+.Welcome {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 18px;
+
+}
+
+.paragraphAdjustment {
+  margin-top: -20px;
 }
 
 /*.NoteIMG {
@@ -57,47 +53,6 @@ body {
                 <img src="/Logo.png" alt='Blue 16th Note clip art' />
             </div>
 */
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.blinkingText {
-  animation: blink 2s infinite;
-  /* Same duration as rectangles */
-
-}
-
-.center-rectangle {
-  width: 100px;
-  /* Adjust the width as needed to make the rectangles narrower */
-  height: 50px;
-  /* Adjust the height as needed */
-  background-color: aqua;
-  color: black;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
-  /* Rectangle background color */
-  margin: 5px;
-  /* Add some spacing between options */
-  margin: 40px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /*animation: blink 2s infinite;*/
-}
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

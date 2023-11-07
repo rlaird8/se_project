@@ -1,6 +1,7 @@
 // SimpleComponent.jsx
 
 import React from 'react';
+import Button from './Components/Button/Button';
 
 const layout = () => {
   return (
@@ -14,7 +15,12 @@ const layout = () => {
 
       <div className='Genres'>
         <h1><b>Select a Genre:</b></h1>
-        <div className="center-rectangle">
+        <Button buttonText={"Country"}/>
+        <Button buttonText={"Rap"}/>
+        <Button buttonText={"R&b"}/>
+        <Button buttonText={"Rock"}/>
+        <Button buttonText={"Pop"}/>
+        {/* <div className="center-rectangle">
           <span className='blinkingText'><b>Country</b></span>
         </div>
         <div className="center-rectangle">
@@ -28,7 +34,7 @@ const layout = () => {
         </div>
         <div className="center-rectangle">
           <span className='blinkingText'><b>Pop</b></span>
-        </div>
+        </div> */}
       </div>
     </div>
 

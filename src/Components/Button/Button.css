@@ -1,0 +1,49 @@
+
+.blinkingText {
+  animation: blink 2s infinite;
+  /* Same duration as rectangles */
+
+}
+
+.center-rectangle {
+  width: 100px;
+  /* Adjust the width as needed to make the rectangles narrower */
+  height: 50px;
+  /* Adjust the height as needed */
+  background-color: aqua;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  /* Rectangle background color */
+  margin: 5px;
+  /* Add some spacing between options */
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /*animation: blink 2s infinite;*/
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.Genres {
+  font-size: 14px;
+  margin: 20px auto;
+  color: red;
+}
+
+
