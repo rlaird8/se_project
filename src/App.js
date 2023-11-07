@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import Button from './Components/Button/Button';
 import SelectDifficulty from './Components/selectDifficulty/SelectDifficulty'; // Ensure the component name starts with an uppercase letter
 
-const Layout = () => {
+const App = () => {
   const [selectedGenre, setSelectedGenre] = useState(null);
+  const [selectedDifficulty, setSelectedDifficulty] = useState(null);
 
   function clickHandler(buttonText) {
     setSelectedGenre(buttonText);
@@ -29,10 +30,10 @@ const Layout = () => {
           </div>
         </div>
       ) : (
-        <SelectDifficulty />
+        <SelectDifficulty setSelectedDifficulty={setSelectedDifficulty} />
       )}
     </div>
   );
 };
 
-export default Layout;
+export default App;
