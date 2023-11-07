@@ -44,17 +44,11 @@ body {
   margin-top: -20px;
 }
 
-/*.NoteIMG {
-  background-color: black;
-}*/
-
-/*FOR THE JSX
-<div className='NoteIMG'>
-                <img src="/Logo.png" alt='Blue 16th Note clip art' />
-            </div>
-*/
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.button-container {
+  display: flex;
 }
