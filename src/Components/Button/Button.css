@@ -43,9 +43,11 @@
   /*animation: blink 2s infinite;*/
 }
 
-
-
 .Genres {
   font-size: 14px;
   margin: 20px auto;
+}
+
+.removeLinkStyles {
+  text-decoration: none;
 }
