@@ -1,10 +1,10 @@
 import React from 'react'
 import './Button.css';
 
-export default function Button({ buttonText }) {
+export default function Button( { buttonText, clickHandler } ) {
   return (
-    <div className="center-rectangle">
-      <span className='blinkingText'><b>{buttonText}</b></span>
+    <div onClick={() => clickHandler(buttonText)} className="center-rectangle">
+          <span className='blinkingText'><b>{ buttonText }</b></span>
     </div>
   )
 }

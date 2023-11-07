@@ -4,12 +4,17 @@
   font-size: 20px;
   color: black;
   font-family: 'Times New Roman', Times, serif;
-  animation: none;
-}
-
-.blinkingText:hover {
-  animation: blink 2s infinite;
-  /* Blink animation on hover */
+  font-size: 20px;
+  /* Rectangle background color */
+  margin: 5px;
+  /* Add some spacing between options */
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  /*animation: blink 2s infinite;*/
 }
 
 @keyframes blink {
