@@ -30,7 +30,8 @@
   display: flex;
   justify-content: space-between;
   /* Adjust this property to control the spacing between buttons */
-  width: 100%;
+  gap: 3rem;
+  width: 60rem;
 }
 
 .center-rectangle {
@@ -51,27 +52,6 @@
   font-size: 14px;
   margin: 20px auto;
   margin-top: -5px;
-}
-
-.removeLinkStyles {
-  text-decoration: none;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.greyBox {
-  background-color: #222222;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  /* top: 50%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%);
-  width: 75%; */
 }
 
 .removeLinkStyles {
