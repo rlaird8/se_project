@@ -5,8 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 import Harmonify from "./Components/Harmonify/Harmonify";
-import SelectDifficulty from "./Components/selectDifficulty/SelectDifficulty";
-import './App.css'
+import SelectDifficulty from "./Components/SelectDifficulty/SelectDifficulty";
+import Game from "./Components/Game/Game";
+import './App.css';
 
 const App = () => {
   const [selectedGenre, setSelectedGenre] = useState(null);
@@ -16,7 +17,8 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Harmonify setSelectedGenre={setSelectedGenre} />} />
-        <Route path="/difficulties" element={<SelectDifficulty setSelectedDifficulty={setSelectedDifficulty} />} />
+        <Route path="/difficulties" element={<SelectDifficulty setSelectedDifficulty={setSelectedDifficulty}/>} />
+        <Route path="/game" element={<Game selectedGenre={selectedGenre} selectedDifficulty={selectedDifficulty}/>} />
       </Routes>
     </Router>
   );

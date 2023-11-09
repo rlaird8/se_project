@@ -1,5 +1,5 @@
 .blinkingText {
-  animation: blink 2s infinite;
+  /* animation: blink 2s infinite; */
   /* Same duration as rectangles */
   font-size: 20px;
   color: black;
@@ -34,17 +34,16 @@
 }
 
 .center-rectangle {
-  width: 100px;
-  /* Adjust the width as needed to make the rectangles narrower */
-  height: 50px;
-  /* Adjust the height as needed */
   background-color: aqua;
   /* Rectangle background color */
 
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5px;
   text-align: center;
+  width: 100%;
+  padding: var(--button-padding);
   /*animation: blink 2s infinite;*/
 }
 
@@ -56,6 +55,31 @@
 
 .removeLinkStyles {
   text-decoration: none;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greyBox {
+  background-color: #222222;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%);
+  width: 75%; */
+}
+
+.removeLinkStyles {
+  text-decoration: none;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .greyBox {
