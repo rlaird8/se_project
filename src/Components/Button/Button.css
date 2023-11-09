@@ -26,6 +26,13 @@
   }
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  /* Adjust this property to control the spacing between buttons */
+  width: 100%;
+}
+
 .center-rectangle {
   width: 100px;
   /* Adjust the width as needed to make the rectangles narrower */
@@ -33,9 +40,7 @@
   /* Adjust the height as needed */
   background-color: aqua;
   /* Rectangle background color */
-  margin: 5px;
-  /* Add some spacing between options */
-  margin: 40px auto;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,8 +51,22 @@
 .Genres {
   font-size: 14px;
   margin: 20px auto;
+  margin-top: -5px;
 }
 
 .removeLinkStyles {
   text-decoration: none;
+}
+
+.greyBox {
+  background-color: #222222;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%);
+  width: 75%; */
 }

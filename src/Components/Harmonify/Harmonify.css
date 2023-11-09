@@ -1,44 +1,60 @@
 .titleH {
-    font-size: 24px;
-    color: aqua;
-    white-space: nowrap;
-    /* The code below (along with the keyframes) applies the transition to the title */
-    overflow: hidden;
-    /* Hide overflowing text */
-    animation: typewriter 2s steps(40);
+  font-size: 44px;
+  color: aqua;
+  white-space: nowrap;
+  /* The code below (along with the keyframes) applies the transition to the title */
+  overflow: hidden;
+  /* Hide overflowing text */
+  animation: typewriter 2s steps(40);
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+    /* Start with no text */
   }
-  
-  @keyframes typewriter {
-    from {
-      width: 0;
-      /* Start with no text */
-    }
-  
-    to {
-      width: 100%;
-      /* Display the entire text */
-    }
+
+  to {
+    width: 100%;
+    /* Display the entire text */
   }
-  
-  .Welcome {
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    font-size: 18px;
-  
-  }
-  
-  .paragraphAdjustment {
-    margin-top: -20px;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
-  }
+}
+
+.Welcome {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 24px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+
+}
+
+.paragraphAdjustment {
+  margin-top: -5px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.genres {
+  display: flex;
+  align-content: center;
+}
+
+.genreHeader {
+  margin-bottom: 1rem;
+  color: #0CAFFF;
+}
