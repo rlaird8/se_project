@@ -1,4 +1,42 @@
 .difficulty-container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.selectDificulty {
+    color: #0CAFFF;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+}
+
+.selectGreyBox {
+    background-color: #222222;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    margin-bottom: 330px;
+}
+
+.buttonFormating {
+    display: flex;
+    justify-content: space-between;
+    /* Adjust this property to control the spacing between buttons */
+    gap: 3rem;
+    width: 60rem;
+}
+
+.selectTitleH {
+    font-size: 44px;
+    color: aqua;
+    white-space: nowrap;
+    /* The code below (along with the keyframes) applies the transition to the title */
+    overflow: hidden;
+    margin-top: 20%;
+    /* Hide overflowing text */
 }
