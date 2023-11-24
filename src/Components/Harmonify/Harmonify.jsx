@@ -5,6 +5,7 @@ import './Harmonify.css';
 export default function Harmonify({ setSelectedGenre }) {
   function clickHandler(buttonText) {
     setSelectedGenre(buttonText);
+    console.log(buttonText);
   }
 
   return (
@@ -30,7 +31,7 @@ export default function Harmonify({ setSelectedGenre }) {
             <Button
               clickHandler={clickHandler}
               route={"/difficulties"}
-              buttonText={"Country"}
+              buttonText={"Phonk"}
             />
             <Button
               clickHandler={clickHandler}
