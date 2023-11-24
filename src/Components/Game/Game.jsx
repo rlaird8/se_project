@@ -3,12 +3,12 @@ import "./Game.css";
 import Strikes from "../Strikes/Strikes";
 import Button from "../Button/Button";
 import { useQuery } from "@tanstack/react-query";
+import AudioPlayer from "../AudioPlayer/AudioPlayer";
 
 export default function Game({ selectedGenre, selectedDifficulty }) {
   const [songEnded, setSongEnded] = useState(false);
   const [currentSong, setCurrentSong] = useState("");
 
-  // Fetch the playlist
   const { isLoading, error, data } = useQuery({
     queryKey: ["playlist", "Bass"],
     queryFn: () =>
@@ -17,51 +17,34 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
       ),
   });
 
-  // Set a new song whenever the playlist changes (This is wrong, should be whenever a new song is requested)
-  function fetchSong() {
+  const fetchNewSong = () => {
     if (data && data.songs.length > 0) {
-      setCurrentSong(
+      return (
         "http://localhost:8000/songs/audio/" +
         Math.floor(Math.random() * data.songs.length) +
         "/segment/5/"
       );
     }
-  }
+    return "";
+  };
 
-  // Play the song if one isn't already playing
+  const playSong = () => {
+    const newSongUrl = fetchNewSong();
+    console.log(newSongUrl);
+    setCurrentSong(newSongUrl);
+    setSongEnded(false);
+  };
+
+  const handleSongEnded = () => {
+    setSongEnded(true);
+  };
+
   useEffect(() => {
-    const audio = new Audio();
-  
-    
-    const playSong = () => {
-      audio.addEventListener("ended", () => {
-        setSongEnded(true);
-      });
-  
-      audio.src = currentSong;
-      audio.play();
-      console.log(audio.src);
-  
-      return audio;
-    };
-
-    console.log(currentSong);
-    console.log(songEnded)
-    if (currentSong && !songEnded) {
+    if (data) {
       playSong();
     }
+  }, [data]);
   
-    return () => {
-      // Cleanup audio resources if needed
-      audio.removeEventListener("ended", () => {
-        setSongEnded(true);
-      });
-      audio.pause();
-      audio.src = "";
-    };
-  }, [currentSong, songEnded]);
-  
-
   if (error) return <p>Error...</p>;
   if (isLoading) return <p>Loading...</p>;
 
@@ -69,10 +52,12 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
     <div className="game">
       <Strikes numOfStrikes={3} />
       <div className="options-container">
-        {/* Add buttons or other components here */}
+        <Button
+          clickHandler={playSong}
+          buttonText={"Get New Song"}
+        />
+        <AudioPlayer src={currentSong} onEnded={handleSongEnded} />
       </div>
     </div>
   );
-
-  
 }
