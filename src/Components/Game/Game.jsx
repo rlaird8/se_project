@@ -8,7 +8,7 @@ import AudioPlayer from "../AudioPlayer/AudioPlayer";
 export default function Game({ selectedGenre, selectedDifficulty }) {
   const [songEnded, setSongEnded] = useState(false);
   const [currentSong, setCurrentSong] = useState("");
-  const [songNames, setSongNames] = useState([]);
+  const [songTitles, setSongTitles] = useState([]);
 
   let currentSongID = -1;
 
@@ -36,6 +36,8 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
     console.log(newSongUrl);
     setCurrentSong(newSongUrl);
     setSongEnded(false);
+    generateSongNames();
+
   };
 
   const handleSongEnded = () => {
@@ -64,7 +66,7 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
       const randomPosition = Math.floor(Math.random() * (tmpSongNames.length + 1));
       tmpSongNames.splice(randomPosition, 0, data.songs[currentSongID].title + "real");
   
-      setSongNames(tmpSongNames);
+      setSongTitles(tmpSongNames);
       console.log(tmpSongNames);
     }
   };
@@ -75,7 +77,6 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
     if (data) {
       playSong();
     }
-    generateSongNames();
   }, [data]);
   
   if (error) return <p>Error...</p>;
@@ -87,19 +88,19 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
       <div className="options-container">
         <Button
           clickHandler={playSong}
-          buttonText={songNames[0]}
+          buttonText={songTitles[0]}
         />
         <Button
           clickHandler={playSong}
-          buttonText={songNames[1]}
+          buttonText={songTitles[1]}
         />
         <Button
           clickHandler={playSong}
-          buttonText={songNames[2]}
+          buttonText={songTitles[2]}
         />
         <Button
           clickHandler={playSong}
-          buttonText={songNames[3]}
+          buttonText={songTitles[3]}
         />
         <AudioPlayer src={currentSong} onEnded={handleSongEnded} />
       </div>
