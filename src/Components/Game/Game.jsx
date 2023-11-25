@@ -37,7 +37,6 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
     setCurrentSong(newSongUrl);
     setSongEnded(false);
     generateSongNames();
-
   };
 
   const handleSongEnded = () => {
@@ -81,10 +80,10 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
   
   if (error) return <p>Error...</p>;
   if (isLoading) return <p>Loading...</p>;
-  
+
   return (
     <div className="game">
-      <Strikes numOfStrikes={3} />
+      <Strikes difficulty={selectedDifficulty} />
       <div className="options-container">
         <Button
           clickHandler={playSong}
