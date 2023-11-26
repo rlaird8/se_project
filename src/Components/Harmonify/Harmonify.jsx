@@ -31,7 +31,7 @@ export default function Harmonify({ setSelectedGenre }) {
             <Button
               clickHandler={clickHandler}
               route={"/difficulties"}
-              buttonText={"Phonk"}
+              buttonText={"Bass"}
             />
             <Button
               clickHandler={clickHandler}

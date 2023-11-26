@@ -24,7 +24,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <Router>
         <Routes>
-          <Route path="/" element={<Harmonify setSeletedGenre={setSelectedGenre} />} />
+          <Route path="/" element={<Harmonify setSelectedGenre={setSelectedGenre} />} />
           <Route path="/difficulties" element={<SelectDifficulty setSelectedDifficulty={setSelectedDifficulty}/>} />
           <Route path="/game" element={<Game selectedGenre={selectedGenre} selectedDifficulty={selectedDifficulty}/>} />
         </Routes>

@@ -9,13 +9,15 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
   const [songEnded, setSongEnded] = useState(false);
   const [currentSong, setCurrentSong] = useState("");
   const [songTitles, setSongTitles] = useState([]);
+  const [currentSongTitle, setCurrentSongTitle] = useState("");
+  const [numMissed, setNumMissed] = useState(0);
 
   let currentSongID = -1;
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["playlist", "Bass"],
     queryFn: () =>
-      fetch("http://localhost:8000/songs/playlist/" + "Bass" + "/").then(
+      fetch("http://localhost:8000/songs/playlist/" + selectedGenre + "/").then(
         (res) => res.json()
       ),
   });
@@ -33,7 +35,6 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
 
   const playSong = () => {
     const newSongUrl = fetchNewSong();
-    console.log(newSongUrl);
     setCurrentSong(newSongUrl);
     setSongEnded(false);
     generateSongNames();
@@ -63,14 +64,21 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
   
       // Generate a random position for the title from currentSongID
       const randomPosition = Math.floor(Math.random() * (tmpSongNames.length + 1));
-      tmpSongNames.splice(randomPosition, 0, data.songs[currentSongID].title + "real");
-  
+      tmpSongNames.splice(randomPosition, 0, data.songs[currentSongID].title);
+      setCurrentSongTitle(data.songs[currentSongID].title);
       setSongTitles(tmpSongNames);
-      console.log(tmpSongNames);
     }
   };
   
-  
+  const checkAnswer = (title) => {
+    if (title !== currentSongTitle){
+      setNumMissed(numMissed + 1);
+    }
+
+    if (data) {
+      playSong();
+    }
+  }  
 
   useEffect(() => {
     if (data) {
@@ -83,22 +91,22 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
 
   return (
     <div className="game">
-      <Strikes difficulty={selectedDifficulty} />
+      <Strikes difficulty={selectedDifficulty} numMissed={numMissed} />
       <div className="options-container">
         <Button
-          clickHandler={playSong}
+          clickHandler={() => checkAnswer(songTitles[0])}
           buttonText={songTitles[0]}
         />
         <Button
-          clickHandler={playSong}
+          clickHandler={() => checkAnswer(songTitles[1])}
           buttonText={songTitles[1]}
         />
         <Button
-          clickHandler={playSong}
+          clickHandler={() => checkAnswer(songTitles[2])}
           buttonText={songTitles[2]}
         />
         <Button
-          clickHandler={playSong}
+          clickHandler={() => checkAnswer(songTitles[3])}
           buttonText={songTitles[3]}
         />
         <AudioPlayer src={currentSong} onEnded={handleSongEnded} />
