@@ -6,7 +6,6 @@ import { useQuery } from "@tanstack/react-query";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 
 export default function Game({ selectedGenre, selectedDifficulty }) {
-  const [songEnded, setSongEnded] = useState(false);
   const [currentSong, setCurrentSong] = useState("");
   const [songTitles, setSongTitles] = useState([]);
   const [currentSongTitle, setCurrentSongTitle] = useState("");
@@ -17,7 +16,7 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
   const { isLoading, error, data } = useQuery({
     queryKey: ["playlist", "Bass"],
     queryFn: () =>
-      fetch("http://localhost:8000/songs/playlist/" + selectedGenre + "/").then(
+      fetch("http://localhost:8000/songs/playlist/" + "Bass" + "/").then(
         (res) => res.json()
       ),
   });
@@ -36,12 +35,7 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
   const playSong = () => {
     const newSongUrl = fetchNewSong();
     setCurrentSong(newSongUrl);
-    setSongEnded(false);
     generateSongNames();
-  };
-
-  const handleSongEnded = () => {
-    setSongEnded(true);
   };
 
   const generateSongNames = () => {
@@ -109,7 +103,7 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
           clickHandler={() => checkAnswer(songTitles[3])}
           buttonText={songTitles[3]}
         />
-        <AudioPlayer src={currentSong} onEnded={handleSongEnded} />
+        <AudioPlayer src={encodeURI(currentSong)} setNumMissed={setNumMissed} fetchNextSong={playSong}/>
       </div>
     </div>
   );

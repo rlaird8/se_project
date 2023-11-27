@@ -1,27 +1,33 @@
-// AudioPlayer.js
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
-const AudioPlayer = ({ src, onEnded }) => {
+const AudioPlayer = ({ src, setNumMissed, fetchNextSong }) => {
   const audio = new Audio();
 
   useEffect(() => {
-    audio.addEventListener("ended", onEnded);
-
-    return () => {
-      audio.removeEventListener("ended", onEnded);
+    const handleEnded = () => {
       audio.pause();
-      audio.src = "";
+      audio.currentTime = 0;
+      fetchNextSong();
+      setNumMissed((prev) => prev + 1);
     };
-  }, [onEnded]);
 
-  useEffect(() => {
+    audio.addEventListener("ended", handleEnded);
+
     if (src) {
       audio.src = src;
-      audio.play();
+      audio.play().catch((error) => {
+        console.error("Error playing audio:", error);
+      });
     }
+
+    return () => {
+    //   audio.pause();
+      audio.src = "";
+      audio.removeEventListener("ended", handleEnded);
+    };
   }, [src]);
 
-  return null; // This component doesn't render anything visible
+  return null;
 };
 
 export default AudioPlayer;
