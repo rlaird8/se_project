@@ -8,7 +8,8 @@
 
 .selectDificulty {
     color: #0CAFFF;
-    font-size: 40px;
+    /* font-size: 40px; */
+    font-size: 24px;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 20px;
 }
@@ -19,7 +20,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    /* width: 60%; */
     margin-bottom: 200px;
     border-radius: 20px;
 }
@@ -27,19 +28,29 @@
 .buttonFormating {
     display: flex;
     justify-content: space-between;
-    font-size: 40px;
+    /* font-size: 40px; */
     /* Adjust this property to control the spacing between buttons */
     gap: 3rem;
-    width: 50rem;
+    /* width: 50rem; */
+    width: 60rem;
 }
 
 .selectTitleH {
-    font-size: 50px;
+    /* font-size: 50px; */
+    font-size: 44px;
     color: aqua;
     white-space: nowrap;
     /* The code below (along with the keyframes) applies the transition to the title */
     overflow: hidden;
     margin-top: 20%;
     /* Hide overflowing text */
-    animation: pulse 1s infinite;
+
+}
+
+.paragraphAdjustment {
+    margin-top: -5px;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
 }

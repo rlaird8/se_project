@@ -120,7 +120,6 @@
   }
 }
 
-
 @media (max-width: 1300px) {
   .button-container {
     max-width: 170px;
@@ -168,14 +167,14 @@
 
   @media (max-width: 425px) {
     .greyBox {
-      width: 2 00px;
+      width: 200px;
     }
 
   }
 
   @media (max-width: 425px) {
     .selectGreyBox {
-      width: 2 00px;
+      width: 200px;
     }
 
   }
@@ -209,6 +208,36 @@
 .center-rectangle:focus {
   background-color: #0CAFFF;
   color: #ffffff;
+}
+
+
+@media (max-width: 1730px) {
+  .selectGreyBox {
+    max-width: 1300px;
+    width: 70rem;
+  }
+}
+
+@media (max-width: 1290px) {
+  .selectGreyBox {
+    max-width: 900px;
+    width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .selectGreyBox {
+    max-width: 200px;
+    width: 60rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .button-container1 {
+    max-width: 110px;
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 /*
