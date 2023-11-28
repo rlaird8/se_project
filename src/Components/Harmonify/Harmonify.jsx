@@ -10,6 +10,7 @@ export default function Harmonify({ setSelectedGenre }) {
 
   return (
     <div className="Welcome">
+<<<<<<< Updated upstream
       <div className='text-container'>
         <div className="titleH">
           <h1>
@@ -23,6 +24,20 @@ export default function Harmonify({ setSelectedGenre }) {
             </p>
           </b>
         </div>
+=======
+      <div className="titleH">
+        <h1>
+          Welcome to <i>Harmonify</i>
+        </h1>
+      </div>
+      <div className="paragraphAdjustment">
+        <b>
+          <p>
+            Gain Points by Guessing the Correct Song from the Given Clip! <br />
+            Three Strikes And You're OUT!
+          </p>
+        </b>
+>>>>>>> Stashed changes
       </div>
 
       <div className='greyBox'>

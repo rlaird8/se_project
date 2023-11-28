@@ -14,7 +14,8 @@ export default function SelectDifficulty({ setSelectedDifficulty }) {
         <div className="paragraphAdjustment">
           <b>
             <p>
-              Harmonify! Gain Points By Guessing The Correct Song From The Given Clip! Three Strikes And You're Out!
+              Gain Points by Guessing the Correct Song from the Given Clip! <br />
+              Three Strikes And You're OUT!
             </p>
           </b>
         </div>

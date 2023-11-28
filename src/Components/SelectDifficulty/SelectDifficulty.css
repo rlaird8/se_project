@@ -8,29 +8,44 @@
 
 .selectDificulty {
     color: #0CAFFF;
-    font-size: 24px;
+    font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 20px;
 }
 
+<<<<<<< Updated upstream
 
+=======
+.selectGreyBox {
+    background-color: #222222;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 200px;
+    border-radius: 20px;
+}
+>>>>>>> Stashed changes
 
 .buttonFormating {
     display: flex;
     justify-content: space-between;
+    font-size: 40px;
     /* Adjust this property to control the spacing between buttons */
     gap: 3rem;
-    width: 60rem;
+    width: 50rem;
 }
 
 .selectTitleH {
-    font-size: 44px;
+    font-size: 50px;
     color: aqua;
     white-space: nowrap;
     /* The code below (along with the keyframes) applies the transition to the title */
     overflow: hidden;
     margin-top: 20%;
     /* Hide overflowing text */
+<<<<<<< Updated upstream
 }
 
 .paragraphAdjustment {
@@ -39,4 +54,7 @@
     margin-left: 40px;
     margin-right: 40px;
     text-align: center;
+=======
+    animation: pulse 1s infinite;
+>>>>>>> Stashed changes
 }
