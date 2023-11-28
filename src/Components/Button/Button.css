@@ -82,19 +82,15 @@
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-<<<<<<< Updated upstream
   width: 80%;
 
-=======
   border-radius: 20px;
->>>>>>> Stashed changes
   /* top: 50%;
   left: 50%; */
   /* transform: translate(-50%, -50%);
   width: 75%; */
 }
 
-<<<<<<< Updated upstream
 .selectGreyBox {
   background-color: #222222;
   padding: 30px;
@@ -185,7 +181,6 @@
   }
 
 }
-=======
 
 .center-rectangle {
   border: 0;
@@ -228,4 +223,3 @@
   color: rgba(0, 0, 0, .3);
 }
 */
->>>>>>> Stashed changes
