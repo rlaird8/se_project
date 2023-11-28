@@ -13,9 +13,6 @@
     margin-bottom: 20px;
 }
 
-<<<<<<< Updated upstream
-
-=======
 .selectGreyBox {
     background-color: #222222;
     padding: 30px;
@@ -26,7 +23,6 @@
     margin-bottom: 200px;
     border-radius: 20px;
 }
->>>>>>> Stashed changes
 
 .buttonFormating {
     display: flex;
@@ -45,16 +41,5 @@
     overflow: hidden;
     margin-top: 20%;
     /* Hide overflowing text */
-<<<<<<< Updated upstream
-}
-
-.paragraphAdjustment {
-    margin-top: -5px;
-    text-align: center;
-    margin-left: 40px;
-    margin-right: 40px;
-    text-align: center;
-=======
     animation: pulse 1s infinite;
->>>>>>> Stashed changes
 }

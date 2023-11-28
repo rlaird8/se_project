@@ -71,10 +71,7 @@ code {
 .button-container {
   display: flex;
   justify-content: center;
-<<<<<<< Updated upstream
-=======
   gap: 3rem;
->>>>>>> Stashed changes
 }
 
 .genres {
@@ -85,72 +82,5 @@ code {
 .genreHeader {
   margin-bottom: 1rem;
   color: #0CAFFF;
-<<<<<<< Updated upstream
-  font-size: 34px;
-}
-
-@media (max-width: 1020px) {
-  .titleH {
-    font-size: 40px;
-  }
-}
-
-
-@media (max-width: 900px) {
-  .titleH {
-    font-size: 37px;
-  }
-}
-
-@media (max-width: 790px) {
-  .titleH {
-    font-size: 32px;
-  }
-}
-
-@media (max-width: 680px) {
-  .titleH {
-    font-size: 28px;
-  }
-}
-
-
-@media (max-width: 599px) {
-  .titleH {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 475px) {
-  .titleH {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 375px) {
-  .titleH {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 310px) {
-  .titleH {
-    font-size: 12px;
-  }
-}
-
-
-@media (max-width: 1300px) {
-  /* .titleH {
-    width: 1199px;
-    text-align: center;
-    font-size: 40px;
-  } */
-
-  .genreHeader {
-    font-size: 28px;
-  }
-=======
   font-size: 40px;
->>>>>>> Stashed changes
 }
