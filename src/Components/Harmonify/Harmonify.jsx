@@ -10,18 +10,21 @@ export default function Harmonify({ setSelectedGenre }) {
 
   return (
     <div className="Welcome">
-      <div className="titleH">
-        <h1>
-          Welcome to <i>Harmonify</i>
-        </h1>
+      <div className='text-container'>
+        <div className="titleH">
+          <h1>
+            Welcome to <i>Harmonify</i>
+          </h1>
+        </div>
+        <div className="paragraphAdjustment">
+          <b>
+            <p>
+              Harmonify! Gain Points By Guessing The Correct Song From The Given Clip! Three Strikes And You're Out!
+            </p>
+          </b>
+        </div>
       </div>
-      <div className="paragraphAdjustment">
-        <b>
-          <p>
-            Harmonify! Gain Points By Guessing The Correct Song From The Given Clip! Three Strikes And You're Out!
-          </p>
-        </b>
-      </div>
+
       <div className='greyBox'>
         <div className="Genres">
           <h1 className='genreHeader'>

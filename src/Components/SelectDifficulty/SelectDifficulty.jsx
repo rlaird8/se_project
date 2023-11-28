@@ -4,9 +4,9 @@ import './SelectDifficulty.css';
 
 export default function SelectDifficulty({ setSelectedDifficulty }) {
   return (
-    <div className="difficulty-container">
-      <div className="Welcome">
-        <div className="selectTitleH">
+    <div className="Welcome">
+      <div className="text-container">
+        <div className="titleH">
           <h1>
             Welcome to <i>Harmonify</i>
           </h1>
@@ -19,15 +19,32 @@ export default function SelectDifficulty({ setSelectedDifficulty }) {
           </b>
         </div>
       </div>
-      <div className='selectGreyBox'>
-        <div className='selectDificulty'><i><b>Select a Difficulty:</b></i></div>
-        <div className='buttonFormating'>
-          <Button clickHandler={setSelectedDifficulty} route={"/game"} buttonText={"Easy"} />
-          <Button clickHandler={setSelectedDifficulty} route={"/game"} buttonText={"Medium"} />
-          <Button clickHandler={setSelectedDifficulty} route={"/game"} buttonText={"Hard"} />
-        </div>
-      </div>
 
+      <div className='selectGreyBox'>
+        <div className='Genres'>
+          <h1 className='genreHeader'>
+            <i><b>Select a Difficulty:</b></i>
+          </h1>
+          <div className="button-container1">
+            <Button
+              clickHandler={setSelectedDifficulty}
+              route={"/game"}
+              buttonText={"Easy"}
+            />
+            <Button
+              clickHandler={setSelectedDifficulty}
+              route={"/game"}
+              buttonText={"Medium"}
+            />
+            <Button
+              clickHandler={setSelectedDifficulty}
+              route={"/game"}
+              buttonText={"Hard"}
+            />
+          </div>
+        </div>
+
+      </div>
     </div>
   )
 }
