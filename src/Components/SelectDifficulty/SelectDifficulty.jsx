@@ -29,17 +29,17 @@ export default function SelectDifficulty({ setSelectedDifficulty }) {
           <div className="button-container1">
             <Button
               clickHandler={setSelectedDifficulty}
-              route={"/game"}
+              route={"/name"}
               buttonText={"Easy"}
             />
             <Button
               clickHandler={setSelectedDifficulty}
-              route={"/game"}
+              route={"/name"}
               buttonText={"Medium"}
             />
             <Button
               clickHandler={setSelectedDifficulty}
-              route={"/game"}
+              route={"/name"}
               buttonText={"Hard"}
             />
           </div>

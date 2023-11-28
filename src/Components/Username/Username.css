@@ -1,0 +1,48 @@
+.container {
+    text-align: center;
+    margin-top: 225px;
+    align-content: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .username-input {
+    width: 500px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 40px;
+    outline: none;
+    font-family: 'Times New Roman', Times, serif; 
+  }
+  
+  .username-input::placeholder {
+    color: white;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 20px auto;
+    --button-container-width: 25%;
+    --button-padding: 1rem;
+    
+}
+
+.blinkingText {
+    font-size: 36px;
+}
+
+
+
+  
+
+  
+  

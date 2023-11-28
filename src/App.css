@@ -1,6 +1,8 @@
 :root {
   --button-padding: 0;
+  --button-container-width: 52.5%;
 }
+
 
 /*
   1. Use a more-intuitive box-sizing model.

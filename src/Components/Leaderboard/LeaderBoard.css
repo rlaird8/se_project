@@ -1,0 +1,51 @@
+.title {
+    font-size: 28px;  
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+.whiteText {
+    color: white;
+}
+
+.text {
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif; 
+    gap: 7px;
+}
+
+.leaderboard-container {
+    width: 80%;
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 20px auto;
+    padding: 20px;
+    border-top: 2px solid #ffffff; /* Border above the leaderboard */
+    border-bottom: 2px solid #ffffff; /* Border below the leaderboard */
+    align-content: center;
+}
+
+.leaderboard-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 24px;
+}
+
+.rank,
+.name,
+.score {
+    flex: .3;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: auto;
+    --button-container-width: 52.5%;
+    --button-padding: 2.5rem;
+    font-size: 50px;
+}
