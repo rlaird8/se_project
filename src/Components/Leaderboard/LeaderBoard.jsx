@@ -66,7 +66,7 @@ export default function Leaderboard() {
                     <span className="score">40</span>
                 </div>
             </div>
-            <div className="button-container">
+            <div className="button-containerL">
                 <Button
                     clickHandler={clickHandler}
                     route={"/"}
@@ -79,6 +79,6 @@ export default function Leaderboard() {
                 />
             </div>
         </div>
-        
+
     )
 }

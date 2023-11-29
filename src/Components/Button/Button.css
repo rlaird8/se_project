@@ -33,6 +33,14 @@
   justify-content: space-between;
   /* Adjust this property to control the spacing between buttons */
   gap: 3rem;
+  /* width: var(--button-container-width); */
+}
+
+.button-containerL {
+  display: flex;
+  justify-content: space-between;
+  /* Adjust this property to control the spacing between buttons */
+  gap: 3rem;
   width: var(--button-container-width);
 }
 
