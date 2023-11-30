@@ -30,8 +30,10 @@ const App = () => {
           <Route path="/difficulties" element={<SelectDifficulty setSelectedDifficulty={setSelectedDifficulty}/>} />
           <Route path="/name" element={<Username />} />
           <Route path="/game" element={<Game selectedGenre={selectedGenre} selectedDifficulty={selectedDifficulty}/>} />
+          <Route path="/leaderboard" element={<LeaderBoard />} />
         </Routes>
       </Router>
+      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 };

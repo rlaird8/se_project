@@ -1,10 +1,13 @@
 import React from 'react'
 import Button from '../Button/Button';
 import './LeaderBoard.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Leaderboard() {
-    function clickHandler(buttonText) {
+    const navigate = useNavigate();
 
+    function clickHandler(route) {
+        navigate(route);
     }
 
     return (
@@ -74,7 +77,7 @@ export default function Leaderboard() {
                 />
                 <Button
                     clickHandler={clickHandler}
-                    route={"/"}
+                    route={"/game"}
                     buttonText={"Retry"}
                 />
             </div>

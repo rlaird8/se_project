@@ -12,7 +12,7 @@ export default function Strikes({ difficulty, numMissed }) {
   const navigate = useNavigate();
 
   if ((difficultyToStrikes[difficulty] - numMissed) === 0) {
-    navigate("/");
+    navigate("/leaderboard");
   }
 
   //TODO: Replace the X with an image to represent the strike
