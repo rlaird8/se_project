@@ -25,15 +25,19 @@ body {
 }
 
 .titleH {
-
   font-size: 50px;
   color: aqua;
   white-space: nowrap;
-  /* The code below (along with the keyframes) applies the transition to the title */
   overflow: hidden;
-  /* Hide overflowing text */
   animation: pulse 1s infinite;
+
+  /* Add a thick black border using text-shadow */
+  text-shadow:
+    -2px -2px 0 black, 0 -2px 0 black, 2px -2px 0 black,
+    -2px 0 0 black, 2px 0 0 black,
+    -2px 2px 0 black, 0 2px 0 black, 2px 2px 0 black;
 }
+
 
 
 

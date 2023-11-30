@@ -42,9 +42,4 @@ label {
   margin: 20px auto;
   --button-container-width: 25%;
   --button-padding: 1rem;
-
-}
-
-.blinkingText {
-  font-size: 36px;
 }
