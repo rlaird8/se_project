@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const AudioPlayer = ({ src, setNumMissed, fetchNextSong }) => {
+const AudioPlayer = ({ src, setNumMissed, fetchNextSong, runTime, setRunTime }) => {
   const audio = new Audio();
 
   useEffect(() => {
@@ -11,7 +11,13 @@ const AudioPlayer = ({ src, setNumMissed, fetchNextSong }) => {
       setNumMissed((prev) => prev + 1);
     };
 
+    const updateCurrentTime = () => {
+      setRunTime(audio.duration - audio.currentTime);
+      console.log(runTime);
+    }
+
     audio.addEventListener("ended", handleEnded);
+    audio.addEventListener("timeupdate", updateCurrentTime);
 
     if (src) {
       audio.src = src;
@@ -21,13 +27,17 @@ const AudioPlayer = ({ src, setNumMissed, fetchNextSong }) => {
     }
 
     return () => {
-    //   audio.pause();
       audio.src = "";
       audio.removeEventListener("ended", handleEnded);
+      audio.removeEventListener("timeupdate", updateCurrentTime)
     };
   }, [src]);
 
-  return null;
+  return (
+      <div className="timer">
+        <h1>{Math.floor(runTime)} </h1>
+      </div>
+  );
 };
 
 export default AudioPlayer;

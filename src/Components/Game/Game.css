@@ -10,9 +10,16 @@
 .game {
     --button-padding: 2rem;
     display: grid;
-    grid-template-rows: 10px 1fr;
+    grid-template-rows: 10px 2fr 4fr;
     grid-template-columns: 1fr;
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
 }

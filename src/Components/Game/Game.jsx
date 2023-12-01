@@ -4,12 +4,15 @@ import Strikes from "../Strikes/Strikes";
 import Button from "../Button/Button";
 import { useQuery } from "@tanstack/react-query";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
+import Score from "../Score/Score";
 
 export default function Game({ selectedGenre, selectedDifficulty }) {
   const [currentSong, setCurrentSong] = useState("");
   const [songTitles, setSongTitles] = useState([]);
   const [currentSongTitle, setCurrentSongTitle] = useState("");
   const [numMissed, setNumMissed] = useState(0);
+  const [isAnswerCorrect, setisAnswerCorrect] = useState(0);
+  const [runTime, setRunTime] = useState(5);
 
   let currentSongID = -1;
 
@@ -67,6 +70,10 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
   const checkAnswer = (title) => {
     if (title !== currentSongTitle){
       setNumMissed(numMissed + 1);
+      setisAnswerCorrect(0);
+    }
+    else {
+      setisAnswerCorrect(1);
     }
 
     if (data) {
@@ -86,6 +93,10 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
   return (
     <div className="game">
       <Strikes difficulty={selectedDifficulty} numMissed={numMissed} />
+      <div className="stats">
+        <Score difficulty={selectedDifficulty} runTime={runTime} isCorrect={isAnswerCorrect} />
+        <AudioPlayer src={encodeURI(currentSong)} setNumMissed={setNumMissed} fetchNextSong={playSong} runTime={runTime} setRunTime={setRunTime} />
+      </div>
       <div className="options-container">
         <Button
           clickHandler={() => checkAnswer(songTitles[0])}
@@ -103,7 +114,6 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
           clickHandler={() => checkAnswer(songTitles[3])}
           buttonText={songTitles[3]}
         />
-        <AudioPlayer src={encodeURI(currentSong)} setNumMissed={setNumMissed} fetchNextSong={playSong}/>
       </div>
     </div>
   );
