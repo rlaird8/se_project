@@ -53,4 +53,5 @@
     --button-container-width: 52.5%;
     --button-padding: 2.5rem;
     font-size: 50px;
+    justify-content: center;
 }
