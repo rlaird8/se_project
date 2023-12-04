@@ -1,14 +1,49 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Button from '../Button/Button';
 import './LeaderBoard.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function Leaderboard() {
+const submitToLeaderboard = async (user_id, score) => {
+    try {
+      const response = await fetch('http://localhost:8000/leaderboard/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user_id: user_id, score: score }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      // Assuming the API returns JSON data, you can handle the response here if needed
+      const responseData = await response.json();
+      console.log('Leaderboard API response:', responseData);
+  
+    } catch (error) {
+      console.error('Error during leaderboard submission:', error.message);
+    }
+  };
+  
+
+export default function Leaderboard( {user_id, score}) {
     const navigate = useNavigate();
+    const hasEffectRun = useRef(false);
 
     function clickHandler(route) {
         navigate(route);
     }
+
+    useEffect(() => {
+        if (!hasEffectRun.current) {
+            submitToLeaderboard(user_id, score);
+            hasEffectRun.current = true;
+        }
+    }, []);
+    console.log("user_id: " + user_id);
+    console.log("score: " + score);
+    // fetch the leaderboard after score submits
 
     return (
         <div className="text">

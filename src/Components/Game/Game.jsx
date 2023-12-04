@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import Score from "../Score/Score";
 
-export default function Game({ selectedGenre, selectedDifficulty }) {
+export default function Game({ selectedGenre, selectedDifficulty, score, setScore }) {
   const [currentSong, setCurrentSong] = useState("");
   const [songTitles, setSongTitles] = useState([]);
   const [currentSongTitle, setCurrentSongTitle] = useState("");
@@ -19,7 +19,7 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
   const { isLoading, error, data } = useQuery({
     queryKey: ["playlist", "Bass"],
     queryFn: () =>
-      fetch("http://localhost:8000/songs/playlist/" + "Bass" + "/").then(
+      fetch("http://localhost:8000/songs/playlist/" + selectedGenre + "/").then(
         (res) => res.json()
       ),
   });
@@ -86,6 +86,10 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
       playSong();
     }
   }, [data]);
+
+  useEffect(() => {
+    setScore(0);
+  }, [])
   
   if (error) return <p>Error...</p>;
   if (isLoading) return <p>Loading...</p>;
@@ -94,7 +98,7 @@ export default function Game({ selectedGenre, selectedDifficulty }) {
     <div className="game">
       <Strikes difficulty={selectedDifficulty} numMissed={numMissed} />
       <div className="stats">
-        <Score difficulty={selectedDifficulty} runTime={runTime} isCorrect={isAnswerCorrect} />
+        <Score difficulty={selectedDifficulty} runTime={runTime} isCorrect={isAnswerCorrect} score={score} setScore={setScore} />
         <AudioPlayer src={encodeURI(currentSong)} setNumMissed={setNumMissed} fetchNextSong={playSong} runTime={runTime} setRunTime={setRunTime} />
       </div>
       <div className="options-container">

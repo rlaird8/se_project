@@ -13,7 +13,6 @@ const AudioPlayer = ({ src, setNumMissed, fetchNextSong, runTime, setRunTime }) 
 
     const updateCurrentTime = () => {
       setRunTime(audio.duration - audio.currentTime);
-      console.log(runTime);
     }
 
     audio.addEventListener("ended", handleEnded);

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Score({ difficulty, runTime, isCorrect }) {
-  const [score, setScore] = useState(0);
+export default function Score({ difficulty, runTime, isCorrect, score, setScore}) {
   const difficultyToPoints = {
     Easy: 1,
     Medium: 1.5,

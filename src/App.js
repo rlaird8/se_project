@@ -19,6 +19,8 @@ import Username from "./Components/Username/Username";
 const App = () => {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [selectedDifficulty, setSelectedDifficulty] = useState(null);
+  const [username, setUsername] = useState("");
+  const [score, setScore] = useState(0);
 
   const queryClient = new QueryClient()
 
@@ -28,9 +30,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Harmonify setSelectedGenre={setSelectedGenre} />} />
           <Route path="/difficulties" element={<SelectDifficulty setSelectedDifficulty={setSelectedDifficulty}/>} />
-          <Route path="/name" element={<Username />} />
-          <Route path="/game" element={<Game selectedGenre={selectedGenre} selectedDifficulty={selectedDifficulty}/>} />
-          <Route path="/leaderboard" element={<LeaderBoard />} />
+          <Route path="/name" element={<Username setUsername={setUsername}/>} />
+          <Route path="/game" element={<Game selectedGenre={selectedGenre} selectedDifficulty={selectedDifficulty} score={score} setScore={setScore} />} />
+          <Route path="/leaderboard" element={<LeaderBoard user_id={username} score={score}/>} />
         </Routes>
       </Router>
       <ReactQueryDevtools />
