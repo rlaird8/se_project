@@ -1,6 +1,7 @@
 import React from "react";
 import "./Strikes.css";
 import { useNavigate } from "react-router-dom";
+import strikeImage from "./strike.png";
 
 export default function Strikes({ difficulty, numMissed }) {
   const difficultyToStrikes = {
@@ -20,7 +21,11 @@ export default function Strikes({ difficulty, numMissed }) {
     { length: difficultyToStrikes[difficulty] - numMissed},
     (_, index) => (
       <div key={index} className="strike">
-        X
+        <img
+          src={strikeImage}
+          alt={'Strike ${index + 1}'}
+          style={{width: '30px', height: '30px'}}
+        />
       </div>
     )
   );
