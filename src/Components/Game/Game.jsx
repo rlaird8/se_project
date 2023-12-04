@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 import { useQuery } from "@tanstack/react-query";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import Score from "../Score/Score";
+import { useNavigate } from "react-router";
 
 export default function Game({ selectedGenre, selectedDifficulty, score, setScore }) {
   const [currentSong, setCurrentSong] = useState("");
@@ -13,8 +14,15 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
   const [numMissed, setNumMissed] = useState(0);
   const [isAnswerCorrect, setisAnswerCorrect] = useState(0);
   const [runTime, setRunTime] = useState(5);
-
+  const navigate = useNavigate();
+  const avaliableGenre = ["Bass", "Dubstep", "Future Bass", "House", "Phonk"];
+  const avaliableDifficulties = ["Easy", "Medium", "Hard"];
   let currentSongID = -1;
+
+  if (!avaliableGenre.includes(selectedGenre) || !avaliableDifficulties.includes(selectedDifficulty)) {
+    // Users values got are invalid go back to start before anything bad happens
+    navigate("/");
+  }
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["playlist", "Bass"],

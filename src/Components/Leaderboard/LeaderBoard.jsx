@@ -17,7 +17,6 @@ const submitToLeaderboard = async (user_id, score) => {
         throw new Error('Network response was not ok');
       }
   
-      // Assuming the API returns JSON data, you can handle the response here if needed
       const responseData = await response.json();
       console.log('Leaderboard API response:', responseData);
   
@@ -41,8 +40,6 @@ export default function Leaderboard( {user_id, score}) {
             hasEffectRun.current = true;
         }
     }, []);
-    console.log("user_id: " + user_id);
-    console.log("score: " + score);
     // fetch the leaderboard after score submits
 
     return (
