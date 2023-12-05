@@ -19,10 +19,6 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
   const avaliableDifficulties = ["Easy", "Medium", "Hard"];
   let currentSongID = -1;
 
-  if (!avaliableGenre.includes(selectedGenre) || !avaliableDifficulties.includes(selectedDifficulty)) {
-    // Users values got are invalid go back to start before anything bad happens
-    navigate("/");
-  }
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["playlist", "Bass"],
@@ -97,6 +93,10 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
 
   useEffect(() => {
     setScore(0);
+    if (selectedGenre === null || selectedDifficulty === null) {
+      // Users values got are invalid go back to start before anything bad happens
+      navigate("/");
+    }
   }, [])
   
   if (error) return <p>Error...</p>;
