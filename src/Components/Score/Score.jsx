@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Score({ difficulty, runTime, isCorrect, score, setScore}) {
+export default function Score({ difficulty, runTime, isCorrect, score, setScore }) {
   const difficultyToPoints = {
     Easy: 1,
     Medium: 1.5,
@@ -19,5 +19,5 @@ export default function Score({ difficulty, runTime, isCorrect, score, setScore}
     calculateScore();
   }, [isCorrect]);
 
-  return <h1>Score: {score.toFixed(2)}</h1>;
+  return <h1 className='score-container'>Score: {score.toFixed(2)}</h1>;
 }

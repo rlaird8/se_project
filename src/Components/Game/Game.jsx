@@ -47,20 +47,20 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
     if (data) {
       const tmpSongNames = [];
       const usedIndexes = new Set();
-  
+
       // Generate three random titles
       for (let i = 0; i < 3; i++) {
         let randomIndex;
-  
+
         // Ensure the index is unique
         do {
           randomIndex = Math.floor(Math.random() * data.songs.length);
         } while (usedIndexes.has(randomIndex));
-  
+
         usedIndexes.add(randomIndex);
         tmpSongNames[i] = data.songs[randomIndex].title;
       }
-  
+
       // Generate a random position for the title from currentSongID
       const randomPosition = Math.floor(Math.random() * (tmpSongNames.length + 1));
       tmpSongNames.splice(randomPosition, 0, data.songs[currentSongID].title);
@@ -68,9 +68,9 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
       setSongTitles(tmpSongNames);
     }
   };
-  
+
   const checkAnswer = (title) => {
-    if (title !== currentSongTitle){
+    if (title !== currentSongTitle) {
       setNumMissed(numMissed + 1);
       setisAnswerCorrect(0);
     }
@@ -81,7 +81,7 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
     if (data) {
       playSong();
     }
-  }  
+  }
 
   useEffect(() => {
     if (data) {
@@ -96,7 +96,7 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
       navigate("/");
     }
   }, [])
-  
+
   if (error) return <p>Error...</p>;
   if (isLoading) return <p>Loading...</p>;
 

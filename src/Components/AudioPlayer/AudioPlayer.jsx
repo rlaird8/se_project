@@ -33,9 +33,9 @@ const AudioPlayer = ({ src, setNumMissed, fetchNextSong, runTime, setRunTime }) 
   }, [src]);
 
   return (
-      <div className="timer">
-        <h1>{Math.floor(runTime)} </h1>
-      </div>
+    <div className="timer">
+      <h1>Time Remaining: {Math.floor(runTime)} </h1>
+    </div>
   );
 };
 

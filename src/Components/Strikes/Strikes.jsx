@@ -18,13 +18,13 @@ export default function Strikes({ difficulty, numMissed }) {
 
   //TODO: Replace the X with an image to represent the strike
   const strikeArray = Array.from(
-    { length: difficultyToStrikes[difficulty] - numMissed},
+    { length: difficultyToStrikes[difficulty] - numMissed },
     (_, index) => (
       <div key={index} className="strike">
         <img
           src={strikeImage}
           alt={'Strike ${index + 1}'}
-          style={{width: '30px', height: '30px'}}
+          style={{ width: '30px', height: '30px' }}
         />
       </div>
     )
