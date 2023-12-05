@@ -15,13 +15,11 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
   const [isAnswerCorrect, setisAnswerCorrect] = useState(0);
   const [runTime, setRunTime] = useState(5);
   const navigate = useNavigate();
-  const avaliableGenre = ["Bass", "Dubstep", "Future Bass", "House", "Phonk"];
-  const avaliableDifficulties = ["Easy", "Medium", "Hard"];
   let currentSongID = -1;
 
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ["playlist", "Bass"],
+    queryKey: ["playlist", "playlist"],
     queryFn: () =>
       fetch("http://localhost:8000/songs/playlist/" + selectedGenre + "/").then(
         (res) => res.json()
