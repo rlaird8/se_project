@@ -13,10 +13,16 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
   const [currentSongTitle, setCurrentSongTitle] = useState("");
   const [numMissed, setNumMissed] = useState(0);
   const [isAnswerCorrect, setisAnswerCorrect] = useState(0);
-  const [runTime, setRunTime] = useState(5);
   const navigate = useNavigate();
   let currentSongID = -1;
-
+  
+  const difficultyToTime = {
+    Easy: 15,
+    Medium: 10,
+    Hard: 5,
+  };
+  
+  const [runTime, setRunTime] = useState(difficultyToTime[selectedDifficulty]);
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["playlist", "playlist"],
@@ -34,7 +40,7 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
     if (data && data.songs.length > 0) {
       return (
         "http://localhost:8000/songs/audio/" + currentSongID +
-        "/segment/5/"
+        "/segment/" + difficultyToTime[selectedDifficulty] + "/"
       );
     }
     return "";
