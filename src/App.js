@@ -8,7 +8,6 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import Harmonify from "./Components/Harmonify/Harmonify";
 import SelectDifficulty from "./Components/SelectDifficulty/SelectDifficulty";
 import Game from "./Components/Game/Game";
@@ -35,7 +34,6 @@ const App = () => {
           <Route path="/leaderboard" element={<LeaderBoard user_id={username} score={score}/>} />
         </Routes>
       </Router>
-      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 };
