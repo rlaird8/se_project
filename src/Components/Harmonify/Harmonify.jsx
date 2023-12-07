@@ -18,7 +18,7 @@ export default function Harmonify({ setSelectedGenre }) {
         <div className="paragraphAdjustment">
           <b>
             <p>
-              Harmonify! Gain Points By Guessing The Correct Song From The Given Clip! Three Strikes And You're Out!
+              Harmonify! Gain Points By Guessing The Correct Song From The Given Clip!
             </p>
           </b>
         </div>

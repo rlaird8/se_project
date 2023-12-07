@@ -15,7 +15,6 @@ export default function SelectDifficulty({ setSelectedDifficulty }) {
           <b>
             <p>
               Gain Points by Guessing the Correct Song from the Given Clip! <br />
-              Three Strikes And You're OUT!
             </p>
           </b>
         </div>
