@@ -10,12 +10,12 @@ export default function Harmonify({ setSelectedGenre }) {
   return (
     <div className="Welcome">
       <div className='text-container'>
-        <div className="titleH">
+        <div data-testid="title" className="titleH">
           <h1>
             Welcome to <i>Harmonify</i>
           </h1>
         </div>
-        <div className="paragraphAdjustment">
+        <div data-testid="subtitle" className="paragraphAdjustment">
           <b>
             <p>
               Harmonify! Gain Points By Guessing The Correct Song From The Given Clip!
@@ -26,10 +26,10 @@ export default function Harmonify({ setSelectedGenre }) {
 
       <div className='greyBox'>
         <div className="Genres">
-          <h1 className='genreHeader'>
+          <h1 data-testid="genreHeader" className='genreHeader'>
             <i><b>Select a Genre:</b></i>
           </h1>
-          <div className="button-container">
+          <div data-testid="button-container" className="button-container">
             <Button
               clickHandler={clickHandler}
               route={"/difficulties"}

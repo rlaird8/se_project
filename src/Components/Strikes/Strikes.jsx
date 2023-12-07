@@ -20,7 +20,7 @@ export default function Strikes({ difficulty, numMissed }) {
   const strikeArray = Array.from(
     { length: difficultyToStrikes[difficulty] - numMissed },
     (_, index) => (
-      <div key={index} className="strike">
+      <div key={index} data-testid="strike" className="strike">
         <img
           src={strikeImage}
           alt={'Strike ${index + 1}'}
