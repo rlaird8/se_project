@@ -24,6 +24,9 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
       fetch("http://localhost:8000/songs/playlist/" + selectedGenre + "/").then(
         (res) => res.json()
       ),
+    onSuccess: () => {
+      playSong();
+    },
   });
 
   const fetchNewSong = () => {
@@ -62,7 +65,7 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
       }
 
       // Generate a random position for the title from currentSongID
-      const randomPosition = Math.floor(Math.random() * (tmpSongNames.length + 1));
+      const randomPosition = Math.floor(Math.random() * (tmpSongNames.length));
       tmpSongNames.splice(randomPosition, 0, data.songs[currentSongID].title);
       setCurrentSongTitle(data.songs[currentSongID].title);
       setSongTitles(tmpSongNames);

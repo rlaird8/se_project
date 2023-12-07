@@ -5,7 +5,6 @@ import './Harmonify.css';
 export default function Harmonify({ setSelectedGenre }) {
   function clickHandler(buttonText) {
     setSelectedGenre(buttonText);
-    console.log(buttonText);
   }
 
   return (
