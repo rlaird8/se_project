@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
 import Score from "../Score/Score";
 import { useNavigate } from "react-router";
+import { diff } from "jest-diff";
 
 export default function Game({ selectedGenre, selectedDifficulty, score, setScore }) {
   const [currentSong, setCurrentSong] = useState("");
@@ -97,6 +98,7 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
     if (data) {
       playSong();
     }
+    setRunTime(difficultyToTime[selectedDifficulty]);
   }
 
   useEffect(() => {

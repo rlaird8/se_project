@@ -70,7 +70,7 @@ export default function Leaderboard({ user_id, score }) {
           <div key={index} className="leaderboard-entry">
             <span className="rank">{index + 1}</span>
             <span className="name">{score.user_id}</span>
-            <span className="score">{score.score}</span>
+            <span className="score">{Math.round(score.score * 100) / 1000}</span>
           </div>
         ))}
       </div>

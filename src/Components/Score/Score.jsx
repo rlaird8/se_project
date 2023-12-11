@@ -26,5 +26,5 @@ export default function Score({ difficulty, runTime, isCorrect, score, setScore 
     calculateScore();
   }, [isCorrect]);
 
-  return <h1 data-testid="score" className='score-container'>Score: {score.toFixed(2)}</h1>;
+  return <h1 data-testid="score" className='score-container'>Score: {Math.round(score * 100) / 100}</h1>;
 }
