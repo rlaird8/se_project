@@ -16,8 +16,8 @@ export default function Username({ setUsername }) {
   return (
 
     <div className="container">
-      <input type="text" id="username" className="username-input" placeholder="Enter Your Username:" maxLength={10} onChange={handleInputChange}/>
-      <div className="button-containerU">
+      <input data-testid="usernameInputField" type="text" id="username" className="username-input" placeholder="Enter Your Username:" maxLength={10} onChange={handleInputChange}/>
+      <div data-testid="submitButton" className="button-containerU">
         <Button className='submitButton'
           clickHandler={handleButtonClick}
           route={"/game"}

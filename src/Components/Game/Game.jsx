@@ -36,7 +36,12 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
   });
 
   const fetchNewSong = () => {
-    currentSongID = Math.floor(Math.random() * data.songs.length) + 1;
+    if (data.songs.length === 4) {
+      currentSongID = 0
+    }
+    else {
+      currentSongID = Math.floor(Math.random() * data.songs.length);
+    }
     if (data && data.songs.length > 0) {
       return (
         "http://localhost:8000/songs/audio/" + currentSongID +
@@ -57,6 +62,10 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
       const tmpSongNames = [];
       const usedIndexes = new Set();
 
+      // Add currently playing song
+      usedIndexes.add(currentSongID);
+      
+
       // Generate three random titles
       for (let i = 0; i < 3; i++) {
         let randomIndex;
@@ -65,13 +74,11 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
         do {
           randomIndex = Math.floor(Math.random() * data.songs.length);
         } while (usedIndexes.has(randomIndex));
-
         usedIndexes.add(randomIndex);
         tmpSongNames[i] = data.songs[randomIndex].title;
       }
-
       // Generate a random position for the title from currentSongID
-      const randomPosition = Math.floor(Math.random() * (tmpSongNames.length));
+      const randomPosition = Math.floor(Math.random() * (tmpSongNames.length - 1));
       tmpSongNames.splice(randomPosition, 0, data.songs[currentSongID].title);
       setCurrentSongTitle(data.songs[currentSongID].title);
       setSongTitles(tmpSongNames);
@@ -93,7 +100,7 @@ export default function Game({ selectedGenre, selectedDifficulty, score, setScor
   }
 
   useEffect(() => {
-    if (data) {
+    if (data && data.songs) {
       playSong();
     }
   }, [data]);

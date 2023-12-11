@@ -60,12 +60,12 @@ export default function Leaderboard({ user_id, score }) {
 
   return (
     <div className="text">
-      <div className="title whiteText">
+      <div data-testid="title" className="title whiteText">
         <h1>
           <i>Leaderboard</i>
         </h1>
       </div>
-      <div className="leaderboard-container whiteText">
+      <div data-testid="leaderboardContainer" className="leaderboard-container whiteText">
         {data.map((score, index) => (
           <div key={index} className="leaderboard-entry">
             <span className="rank">{index + 1}</span>

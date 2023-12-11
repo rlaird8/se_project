@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import Button from "../Button/Button";
@@ -19,8 +19,10 @@ test("Test button component", async () => {
   expect(buttonText).toBeInTheDocument();
   expect(buttonText).toHaveTextContent("test");
 
-  // Simulate a click on the button using userEvent
-  await userEvent.click(button);
+  await act(async () => {
+    // Simulate a click on the button using userEvent
+    await userEvent.click(button);
+  })
 
   // Assert that the click handler was called with the correct argument
   expect(mockClickHandler).toHaveBeenCalledWith("test");
