@@ -12,7 +12,7 @@ test("Test score and verify it calculates and displays the correct score with ea
   const { getByTestId } = render(
     <Score
       difficulty="Easy"
-      runTime={5}
+      runTime={15}
       isCorrect={1}
       score={0}
       setScore={setScoreMock}
@@ -31,7 +31,7 @@ test("Test score and verify it calculates and displays the correct score with ea
     const setScoreFunction = setScoreMock.mock.calls[0][0];
 
     // Verify the new value was computed correctly
-    expect(setScoreFunction(0)).toBe(5);
+    expect(setScoreFunction(0)).toBe(15);
   });
 });
 
@@ -42,7 +42,7 @@ test("Test score and verify it calculates and displays the correct score with me
   const { getByTestId } = render(
     <Score
       difficulty="Medium"
-      runTime={5}
+      runTime={10}
       isCorrect={1}
       score={0}
       setScore={setScoreMock}
@@ -61,7 +61,7 @@ test("Test score and verify it calculates and displays the correct score with me
     const setScoreFunction = setScoreMock.mock.calls[0][0];
 
     // Verify the new value was computed correctly
-    expect(setScoreFunction(0)).toBe(7.5);
+    expect(setScoreFunction(0)).toBe(20);
   });
 });
 
@@ -91,6 +91,6 @@ test("Test score and verify it calculates and displays the correct score with ha
     const setScoreFunction = setScoreMock.mock.calls[0][0];
 
     // Verify the new value was computed correctly
-    expect(setScoreFunction(0)).toBe(10);
+    expect(setScoreFunction(0)).toBe(25);
   });
 });
