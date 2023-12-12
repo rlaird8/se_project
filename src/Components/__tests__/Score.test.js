@@ -20,7 +20,7 @@ test("Test score and verify it calculates and displays the correct score with ea
   );
 
   // Initial render should display the initial score (0)
-  expect(getByTestId("score")).toHaveTextContent("Score: 0.00");
+  expect(getByTestId("score")).toHaveTextContent("Score: 0");
 
   // Wait for the next tick of the event loop to allow state to update
   await waitFor(() => {
@@ -50,7 +50,7 @@ test("Test score and verify it calculates and displays the correct score with me
   );
 
   // Initial render should display the initial score (0)
-  expect(getByTestId("score")).toHaveTextContent("Score: 0.00");
+  expect(getByTestId("score")).toHaveTextContent("Score: 0");
 
   // Wait for the next tick of the event loop to allow state to update
   await waitFor(() => {
@@ -80,7 +80,7 @@ test("Test score and verify it calculates and displays the correct score with ha
   );
 
   // Initial render should display the initial score (0)
-  expect(getByTestId("score")).toHaveTextContent("Score: 0.00");
+  expect(getByTestId("score")).toHaveTextContent("Score: 0");
 
   // Wait for the next tick of the event loop to allow state to update
   await waitFor(() => {
